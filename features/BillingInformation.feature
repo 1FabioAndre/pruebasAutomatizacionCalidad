@@ -80,7 +80,7 @@ Scenario: Fill out Bill To information with expired with a wrong card number for
         | Zip          | 12345              |
         | Phone        | 555-555-5555       |
         | E-mail       | pepe@example.com   |
-        | Card Type    | Visa         |
+        | Card Type    | Visa               |
         | Card Number  | 55 22 789 5458     |
         | Expiration   | 12/24              |
         | Same As Bill | true               |
@@ -94,11 +94,27 @@ Scenario: Fill out Bill To information with expired with a wrong phone
         | City         | ciudad             |
         | State        | estado             |
         | Zip          | 12345              |
-        | Phone        | +591-7777777       |
+        | Phone        | 555-555-5555       |
         | E-mail       | pepe@example.com   |
-        | Card Type    | Visa         |
+        | Card Type    | Visa               |
         | Card Number  | 55 22 789 5458     |
         | Expiration   | 12/24              |
         | Same As Bill | true               |
     And I click Place the Order button
     Then I should see an alert with the message "Please enter a valid phone number in this field."
+
+Scenario: Fill out Bill To information with expired with a wrong Zip
+    When I fill in the Bill To section with the following details:
+        | Name         | Pepe Perez         |
+        | Address      | 123 Main St        |
+        | City         | ciudad             |
+        | State        | estado             |
+        | Zip          | 123456789          |
+        | Phone        | 555-555-5555       |
+        | E-mail       | pepe@example.com   |
+        | Card Type    | Visa               |
+        | Card Number  | 55 22 789 5458     |
+        | Expiration   | 12/24              |
+        | Same As Bill | true               |
+    And I click Place the Order button
+    Then I should see an alert with the message "Please enter a valid zip code in this field."
