@@ -118,3 +118,18 @@ Scenario: Fill out Bill To information with expired with a wrong Zip
         | Same As Bill | true               |
     And I click Place the Order button
     Then I should see an alert with the message "Please enter a valid zip code in this field."
+
+Scenario: Fill out Bill To information with expired with incomplete Data without name
+    When I fill in the Bill To section with the following details:
+        | Address      | 123 Main St        |
+        | City         | ciudad             |
+        | State        | estado             |
+        | Zip          | 123456789          |
+        | Phone        | 555-555-5555       |
+        | E-mail       | pepe@example.com   |
+        | Card Type    | Visa               |
+        | Card Number  | 55 22 789 5458     |
+        | Expiration   | 12/24              |
+        | Same As Bill | true               |
+    And I click Place the Order button
+    Then I should see an alert with the message "This is a required field."
