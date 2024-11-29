@@ -24,22 +24,12 @@ When('I fill in the Bill To section with the following details:') do |table|
     fill_in 'billZipCode', with: details['Zip'] 
     fill_in 'billPhone', with: details['Phone']
     fill_in 'billEmail', with: details['E-mail']
-end
-
-When('I select {string} from the Credit Card combo box') do |card_type|
-    select card_type, from: 'CardType'
-end
-
-When('I enter {string} as the Card Number') do |card_number|
-    fill_in 'CardNumber', with: card_number
-end
-
-When('I enter {string} as the Expiration date') do |expiration_date|
-    fill_in 'CardDate', with: expiration_date
-end
-
-When('I check the Same as Bill To checkbox') do
-    check 'shipSameAsBill'
+    select details['Card Type'], from: 'CardType'
+    fill_in 'CardNumber', with: details['Card Number']
+    fill_in 'CardDate', with: details['Expiration']
+    
+    # Checkbox para misma dirección de envío
+    check 'shipSameAsBill' if details['Same As Bill'] == 'true'
 end
 
 When('I click Place the Order button') do
