@@ -40,3 +40,19 @@ Scenario: Fill out Bill To information with expired card date
         | Same As Bill | true               |
     And I click Place the Order button
     Then I should see an alert with the message "Please enter a valid date of the form 'MM/YY' in this field."
+
+Scenario: Fill out Bill To information with expired with a wrong card number for American Express
+    When I fill in the Bill To section with the following details:
+        | Name         | Pepe Perez         |
+        | Address      | 123 Main St        |
+        | City         | ciudad             |
+        | State        | estado             |
+        | Zip          | 12345              |
+        | Phone        | 555-555-5555       |
+        | E-mail       | pepe@example.com   |
+        | Card Type    | American Express   |
+        | Card Number  | 4111111111111111   |
+        | Expiration   | 12/24              |
+        | Same As Bill | true               |
+    And I click Place the Order button
+    Then I should see an alert with the message "Please enter a valid card number of the form '1234-123456-12345' in this field."
