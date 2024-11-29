@@ -1,17 +1,17 @@
-Given('I am on the GMO homepage') do
+Given('I am on the Green Mountain Outpost homepage') do
     visit 'https://demo.borland.com/gmopost/'
-end
+  end
 
-Given('I enter to product catalog') do
+Given('I navigate to the product catalog') do
     find('body > form > div:nth-child(1) > center > table > tbody > tr > td:nth-child(1) > input[type=button]').click
 end
 
-Given('I place an order') do
+Given('I add a product to the cart') do
     fill_in 'QTY_TENTS', with: 1
     find('body > form > table > tbody > tr:nth-child(3) > td > div > center > table > tbody > tr > td > p > input[type=submit]:nth-child(2)').click
 end
 
-Given('I proceed with order') do
+Given('I proceed to checkout') do
     find('body > form > table > tbody > tr:nth-child(3) > td > p > input[type=submit]').click
 end
   
@@ -27,8 +27,6 @@ When('I fill in the Bill To section with the following details:') do |table|
     select details['Card Type'], from: 'CardType'
     fill_in 'CardNumber', with: details['Card Number']
     fill_in 'CardDate', with: details['Expiration']
-    
-    # Checkbox para misma dirección de envío
     check 'shipSameAsBill' if details['Same As Bill'] == 'true'
 end
 
