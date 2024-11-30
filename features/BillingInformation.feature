@@ -9,6 +9,7 @@ Background:
   And I add a product to the cart
   And I proceed to checkout
 
+@maximize
 Scenario: Fill out Bill To information correctly
    When I fill in the Bill To section with the following details:
        | Name         | Pepe Perez         |
