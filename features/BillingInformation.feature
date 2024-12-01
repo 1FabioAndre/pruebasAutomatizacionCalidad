@@ -5,7 +5,7 @@ Feature: Bill Information Form
 
 Background:
   Given I am on the Green Mountain Outpost homepage
-  And I navigate to the product catalog
+  And I navigate to the product catalog 
   And I add a product to the cart
   And I proceed to checkout
 
