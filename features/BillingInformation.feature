@@ -95,7 +95,7 @@ Scenario: Fill out Bill To information with expired with a wrong phone
         | City         | ciudad             |
         | State        | estado             |
         | Zip          | 12345              |
-        | Phone        | 555-555-5555       |
+        | Phone        | +59173799571          |
         | E-mail       | pepe@example.com   |
         | Card Type    | Visa               |
         | Card Number  | 55 22 789 5458     |
