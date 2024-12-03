@@ -31,3 +31,15 @@ When('I click on the Hiking Boots link') do
     expect(page).to have_content('Hiking Boots')
     expect(page).to have_content('Back Country Shorts')
   end
+  When('I click on the Padded Socks link') do
+    find(:xpath, '/html/body/form/table/tbody/tr[2]/td/div/center/table/tbody/tr[5]/td[2]/a/strong').click
+  end
+  
+  Then('I should see the Padded Socks details page') do
+    expect(page).to have_content('Our favorite padded socks will make your next back country trek')
+  end
+  
+  Then('I should see the product description containing {string}') do |text|
+    expect(page).to have_content(text)
+  end
+  
