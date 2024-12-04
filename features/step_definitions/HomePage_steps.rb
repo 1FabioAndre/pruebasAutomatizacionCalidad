@@ -117,5 +117,10 @@ Then('I should see a table with "Internet Explorer 3.0" and "Netscape Navigator 
     expect(page).to have_content('Netscape Navigator 3.0')
   end
 end
+# ---------------------------------------------------------------------------------------------------------------
 
+Then('the link should open the email client with {string}') do |mailto_link|
+  link = find_link('Please let us know how you like our site.')
+  expect(link[:href]).to eq(mailto_link)
+end
 
