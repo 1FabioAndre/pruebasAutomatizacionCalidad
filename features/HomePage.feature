@@ -15,3 +15,7 @@ Scenario: Verify homepage elements
   And I should see a link to the "mailto:gmo-master@segue.com" email address on the homepage
   And I should see the "GMO OnLine" title on the homepage
   And I should see the "Welcome to Green Mountain Outpost's OnLine Catalog!" text on the homepage
+
+Scenario: Clicking the "Enter GMO OnLine" button redirects to the correct page
+  When I click the "Enter GMO OnLine" button
+  Then I should be redirected to the "Online Catalog" page

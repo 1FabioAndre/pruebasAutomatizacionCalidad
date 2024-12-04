@@ -41,3 +41,13 @@ end
 And('I should see the "Welcome to Green Mountain Outpost\'s OnLine Catalog!" text on the homepage') do
   expect(page).to have_content("Welcome to Green Mountain Outpost's OnLine Catalog!", wait: 10)
 end
+
+# ---------------------------------------------------------------------------------------------------------
+When('I click the "Enter GMO OnLine" button') do
+  click_button('Enter GMO OnLine')
+end
+
+Then('I should be redirected to the "Online Catalog" page') do
+  expect(page).to have_current_path('https://demo.borland.com/gmopost/online-catalog.htm', wait: 10)
+end
+# ----------------------------------------------------------------------------------------------------------
