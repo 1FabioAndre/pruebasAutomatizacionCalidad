@@ -7,6 +7,32 @@ Background:
   Given I am on the Green Mountain Outpost homepage
   And I navigate to the product catalog
 
+Scenario: View External Frame Backpack Details
+  When I click on the External Frame Backpack link
+  Then I should see the External Frame Backpack details page
+  And I should see the price is "$ 179.95" on the External Frame Backpack
+  And I should see the item number is "1001" on the External Frame Backpack
+  And I should see the stock quantity is "8" on the External Frame Backpack
+
+Scenario: Navigate back to catalog from External Frame Backpack details
+  When I click on the External Frame Backpack link
+  And I click the browser back button
+  Then I should be back on the product catalog page
+  And I should see all available products
+
+Scenario: View Glacier Sun Glasses Details
+  When I click on the Glacier Sun Glasses link
+  Then I should see the Glacier Sun Glasses details page
+  And I should see the price is "$ 67.99" on the Glacier Sun Glasses
+  And I should see the item number is "1002" on the Glacier Sun Glasses
+  And I should see the stock quantity is "138" on the Glacier Sun Glasses
+
+Scenario: Navigate back to catalog from Glacier Sun Glasses details
+  When I click on the Glacier Sun Glasses link
+  And I click the browser back button
+  Then I should be back on the product catalog page
+  And I should see all available products
+
 Scenario: View Hiking Boots Details
   When I click on the Hiking Boots link
   Then I should see the Hiking Boots details page
