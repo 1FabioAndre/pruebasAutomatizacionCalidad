@@ -50,4 +50,24 @@ end
 Then('I should be redirected to the "Online Catalog" page') do
   expect(page).to have_current_path('https://demo.borland.com/gmopost/online-catalog.htm', wait: 10)
 end
+
+Then('I should see an "Online Catalog" heading') do
+  expect(page).to have_selector('h1', text: 'OnLine Catalog', wait: 10)
+end
+
+Then('I should see the product table with items listed') do
+  # Verificar que la tabla de productos esté presente
+  expect(page).to have_selector('table', visible: true)  
+  # Verificar que la tabla tenga productos listados
+  expect(page).to have_content('3 Person Dome Tent')
+  expect(page).to have_content('External Frame Backpack')
+  expect(page).to have_content('Glacier Sun Glasses')
+  expect(page).to have_content('Padded Socks')
+  expect(page).to have_content('Hiking Boots')
+  expect(page).to have_content('Back Country Shorts')
+  # Contar las filas de la tabla (excluyendo la cabecera)
+    rows = all('table tr').size
+    # Verificar que haya 6 filas de productos
+    expect(rows).to eq(12)
+end
 # ----------------------------------------------------------------------------------------------------------

@@ -19,3 +19,5 @@ Scenario: Verify homepage elements
 Scenario: Clicking the "Enter GMO OnLine" button redirects to the correct page
   When I click the "Enter GMO OnLine" button
   Then I should be redirected to the "Online Catalog" page
+  And I should see an "Online Catalog" heading
+  And I should see the product table with items listed
