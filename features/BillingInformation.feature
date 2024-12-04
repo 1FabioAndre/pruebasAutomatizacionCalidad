@@ -43,7 +43,7 @@ Scenario Outline: Fill out Bill To information with invalid data
   Then I should see an alert with the message "<error_message>"
 
   Examples:
-    | name       | zip       | phone         | card_type        | card_number      | expiration | error_message                                                                     |
+    | name       | zip       | phone        | card_type       | card_number        | expiration | error_message                                                                     |
     | Pepe Perez | 12345     | 555-555-5555 | Visa            | 4111111111111111   | 01/20      | Please enter a valid date of the form 'MM/YY' in this field.                      |
     | Pepe Perez | 12345     | 555-555-5555 | American Express| 4111111111111111   | 12/24      | Please enter a valid card number of the form '1234-123456-12345' in this field.   |
     | Pepe Perez | 12345     | 555-555-5555 | MasterCard      | 55 22 789 5458     | 12/24      | Please enter a valid card number of the form '1234-1234-1234-1234' in this field. |
