@@ -75,7 +75,6 @@ When('I click the "About The GMO Site" button') do
   click_button('About The GMO Site')
 end
 
-
 Then('I should be redirected to the "About This Site" page') do
   expect(current_url).to eq('https://demo.borland.com/gmopost/about.htm')
 end
@@ -100,3 +99,23 @@ And('I should see the technologies table with items listed') do
   end
 end
 # ----------------------------------------------------------------------------------------------------------
+When('I click the "Browser Test Page" button') do
+  click_button('Browser Test Page')
+end
+
+Then('I should be redirected to the "Browser Test Page" page') do
+  expect(current_url).to eq("https://demo.borland.com/gmopost/browser-test.htm")
+end
+
+Then('I should see the page header "All Browsers Are Not Created Equal"') do
+  expect(page).to have_selector('h1', text: 'All Browsers Are Not Created Equal')
+end
+
+Then('I should see a table with "Internet Explorer 3.0" and "Netscape Navigator 3.0" as headings') do
+  within('td[valign="top"] table') do
+    expect(page).to have_content('Internet Explorer 3.0')
+    expect(page).to have_content('Netscape Navigator 3.0')
+  end
+end
+
+

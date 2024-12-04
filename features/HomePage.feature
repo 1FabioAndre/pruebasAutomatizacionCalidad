@@ -27,3 +27,9 @@ Scenario: Clicking the "About the GMO Site" button redirects to the correct page
   Then I should be redirected to the "About This Site" page
   And I should see the page title "About This Site"
   And I should see the technologies table with items listed
+
+ Scenario: Clicking the "Browser Test Page" button redirects to the correct page
+    When I click the "Browser Test Page" button
+    And I should be redirected to the "Browser Test Page" page
+    And I should see the page header "All Browsers Are Not Created Equal"
+    And I should see a table with "Internet Explorer 3.0" and "Netscape Navigator 3.0" as headings
