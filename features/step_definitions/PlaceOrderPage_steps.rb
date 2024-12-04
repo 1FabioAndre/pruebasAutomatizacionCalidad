@@ -1,6 +1,4 @@
-Given('I am on the GMO Home Page') do
-    visit('https://demo.borland.com/gmopost/') # replace with the actual URL for the GMO Home Page
-  end
+
   
   Given('I click on "Enter GMO OnLine" button') do
     # Localizamos y hacemos clic en el botón usando XPath
@@ -11,7 +9,7 @@ Given('I am on the GMO Home Page') do
     visit('https://demo.borland.com/gmopost/online-catalog.htm') # replace with actual URL for the catalog page
   end
   
-  When("I enter the order quantities as shown below:") do |table|
+  When("I enter the order quantities as shown below 1:") do |table|
     table.hashes.each do |row|
       case row['Product Name']
       when '3 Person Dome Tent'
@@ -30,7 +28,7 @@ Given('I am on the GMO Home Page') do
     end
   end
 
-When('I click on the {string} button') do |button_name|
+When('I click on the {string} button 1') do |button_name|
     find('input[name="bSubmit"][value="Place An Order"]').click
     expect(page).to have_current_path('https://demo.borland.com/gmopost/cgi-bin/perl.exe?place-order.pl', wait: 5)
 end

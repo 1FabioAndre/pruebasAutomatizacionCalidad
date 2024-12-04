@@ -9,10 +9,10 @@ Background:
 
 Scenario Outline: Verify Grand Total Calculation for Various Products
     Given I am at the "OnLine Catalog" Page
-    When I enter the order quantities as shown below:
+    When I enter the order quantities as shown below 1:
     | Product Name                | Quantity   |
     | <product_name>              | <quantity> |
-    And I click on the "Place An Order" button
+    And I click on the "Place An Order" button 1
     Then I should see the following order summary table:
     | Product Name                | Product Price  | Product Total  | Sales Tax   | Shipping & Handling | Grand Total   |
     | <product_name>              | <product_price>| <product_total>| <sales_tax> | <shipping_handling> | <grand_total> |
