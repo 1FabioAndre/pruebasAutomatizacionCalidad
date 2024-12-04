@@ -71,3 +71,32 @@ Then('I should see the product table with items listed') do
     expect(rows).to eq(12)
 end
 # ----------------------------------------------------------------------------------------------------------
+When('I click the "About The GMO Site" button') do
+  click_button('About The GMO Site')
+end
+
+
+Then('I should be redirected to the "About This Site" page') do
+  expect(current_url).to eq('https://demo.borland.com/gmopost/about.htm')
+end
+
+And('I should see the page title "About This Site"') do
+  expect(page).to have_title('About This Site')
+end
+
+And('I should see the technologies table with items listed') do
+  # Verificamos que la tabla con tecnologías se muestra correctamente
+  expect(page).to have_selector('table', count: 2)  # Una tabla de tecnologías, otra de aviso
+  expect(page).to have_content('This site incorporates')  # Verificamos que la tabla contiene este texto
+  expect(page).to have_content('It could also incorporate')  # Y este otro texto
+  # Verificamos que ambos listados de tecnologías tengan los elementos correctos
+  tech_items_1 = ['HTML 3.2', 'HTML Browser Extensions', 'Animation', 'JavaScript', 'CGI', 'Java', 'ActiveX', 'Client-side processes', 'Server-side processes']
+  tech_items_2 = ['Style sheets', 'Multimedia', 'VBscript', 'Plug-Ins', 'IIOP', 'Cookies', 'Secure transactions', 'Database access']
+  tech_items_1.each do |item|
+    expect(page).to have_content(item)
+  end
+  tech_items_2.each do |item|
+    expect(page).to have_content(item)
+  end
+end
+# ----------------------------------------------------------------------------------------------------------

@@ -21,3 +21,9 @@ Scenario: Clicking the "Enter GMO OnLine" button redirects to the correct page
   Then I should be redirected to the "Online Catalog" page
   And I should see an "Online Catalog" heading
   And I should see the product table with items listed
+
+Scenario: Clicking the "About the GMO Site" button redirects to the correct page
+  When I click the "About The GMO Site" button
+  Then I should be redirected to the "About This Site" page
+  And I should see the page title "About This Site"
+  And I should see the technologies table with items listed
