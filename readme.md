@@ -27,6 +27,8 @@ Este proyecto implementa un framework de automatización de pruebas utilizando C
 >
 > Para ejecutar un archivo específico de pruebas:
 >
-> - cucumber features\[nombreDelArchivo].feature
+> - cucumber features \ [nombreDelArchivo].feature
+>
 > Para generar Reporte HTML con más detalles y formato mejorado
+>
 > - cucumber --format pretty --format html --out reports/report.html
