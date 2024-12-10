@@ -3,7 +3,7 @@ class BrowserTestPage
   
     # Locators
     def gmo_image_button
-      find('input[type="button"][name="B2"]')  # Aquí seleccionamos el botón correcto
+      find('input[type="button"][name="B2"]')  
     end
   
     def blinking_text
@@ -20,12 +20,12 @@ class BrowserTestPage
     end
   
     def click_left_or_right_button
-      gmo_image_button.click  # Hace clic en el botón que activa la alerta
+      gmo_image_button.click 
     end
   
     def alert_message
-        wait = Selenium::WebDriver::Wait.new(timeout: 10) # Establecer espera de hasta 10 segundos
-        alert = wait.until { page.driver.browser.switch_to.alert } # Espera a que aparezca la alerta
+        wait = Selenium::WebDriver::Wait.new(timeout: 10) 
+        alert = wait.until { page.driver.browser.switch_to.alert } 
         alert.text
     end
   
@@ -33,4 +33,3 @@ class BrowserTestPage
       page.driver.browser.switch_to.alert.accept
     end
   end
-  
