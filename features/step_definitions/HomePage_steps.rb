@@ -6,17 +6,15 @@ end
 
 # Scenario: Verify homepage elements
 Then('I should see all the homepage elements with correct properties') do
-  # Verificar botones
   buttons = @home_page.buttons
   expect(buttons[:enter]).to be_visible
   expect(buttons[:about]).to be_visible
   expect(buttons[:browser]).to be_visible
 
-  # Verificar logo
   logo = @home_page.logo
   expect(logo[:alt]).to eq('Logo')
 
-  # Verificar enlace de correo
+  # Verificar enlace de correo gmo-master@segue.com
   email_link = @home_page.email_link
   expect(email_link[:href]).to eq('mailto:gmo-master@segue.com')
 
@@ -40,10 +38,9 @@ Then('I should see an "Online Catalog" heading') do
 end
 
 Then('I should see the product table with items listed') do
-  # Verificar que la tabla de productos esté presente
   expect(page).to have_selector('table', visible: true)
 
-  # Verificar que la tabla contiene productos
+  # Verificar que la tabla contiene los productos
   products = [
     '3 Person Dome Tent',
     'External Frame Backpack',
@@ -54,7 +51,6 @@ Then('I should see the product table with items listed') do
   ]
   products.each { |product| expect(page).to have_content(product) }
 
-  # Verificar la cantidad de filas en la tabla
   rows = all('table tr').size
   expect(rows).to eq(12)
 end

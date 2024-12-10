@@ -35,5 +35,9 @@ class HomePage
     def email_link
         find('a[href^="mailto:"]')
     end
-  end
+
+    def click_enter_gmo_online
+        find(:xpath, '//input[@name="bSubmit" and @value="Enter GMO OnLine"]').click
+    end
+end
   

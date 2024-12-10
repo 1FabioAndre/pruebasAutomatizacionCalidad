@@ -32,4 +32,4 @@ class BrowserTestPage
     def close_alert
       page.driver.browser.switch_to.alert.accept
     end
-  end
+end
