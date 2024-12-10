@@ -16,7 +16,7 @@ Given('I am on the Browser Test Page') do
       raise "No alert was present"
     end
   end  
-  
+   
   Then('I should see the "Blinking Text"') do
     blinking_text = @browser_page.blinking_text
     expect(blinking_text.text).to eq('Blinking Text')
