@@ -24,8 +24,8 @@ Scenario: Clicking the "About the GMO Site" button redirects to the correct page
 Scenario: Clicking the "Browser Test Page" button redirects to the correct page
   When I click the "Browser Test Page" button
   Then I should be redirected to the "Browser Test Page" page
-  And I should see the page header "All Browsers Are Not Created Equal"
-  And I should see a table with "Internet Explorer 3.0" and "Netscape Navigator 3.0" as headings
+  And I should see the page title "All Browsers Are Not Created Equal"
+  And I should see a table with "Internet Explorer 3.0" and "Netscape Navigator 3.0" as table column titles
 
 Scenario: Clicking the email link opens the email client
   When I click the email link

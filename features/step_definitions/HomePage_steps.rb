@@ -109,11 +109,11 @@ Then('I should be redirected to the "Browser Test Page" page') do
   expect(page).to have_current_path('https://demo.borland.com/gmopost/browser-test.htm', wait: 10)
 end
 
-Then('I should see the page header "All Browsers Are Not Created Equal"') do
+Then('I should see the page title "All Browsers Are Not Created Equal"') do
   expect(page).to have_selector('h1', text: 'All Browsers Are Not Created Equal')
 end
 
-Then('I should see a table with "Internet Explorer 3.0" and "Netscape Navigator 3.0" as headings') do
+Then('I should see a table with "Internet Explorer 3.0" and "Netscape Navigator 3.0" as table column titles') do
   within('td[valign="top"] table') do
     expect(page).to have_content('Internet Explorer 3.0')
     expect(page).to have_content('Netscape Navigator 3.0')
