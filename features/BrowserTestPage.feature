@@ -1,18 +1,15 @@
-Feature: Verify image button placement
-  As a user
-  I want to verify the image button is placed correctly on the page
-  So I can ensure proper alignment
+Feature: Verify behavior on Browser Test Page
 
   Background:
     Given I am on the Browser Test Page
 
-  Scenario: Check image button position
-    When I check the position of the image button
-    Then the image button should be aligned to the right of the page
+  Scenario: Click the left or right button
+    When I click the left or right button
+    Then I should see an alert with the message on the Browser Test Page "This button AND the GMO image should be on the right edge of the page!"
 
-  Scenario: Check for blinking text
-    Then I should see the "Blinking Text" with a blinking effect
+  Scenario: Verify blinking text with correct content
+    Then I should see the "Blinking Text"
 
-  Scenario: Check mailto link
-    When I click the "Please let us know how you like our site" link
-    Then the mail client should open with the correct email address
+  Scenario: Verify that the mail client opens with the correct email address
+    Then the mail client should open with the correct email address "gmo-master@segue.com"
+

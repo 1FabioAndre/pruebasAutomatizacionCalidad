@@ -33,3 +33,9 @@ begin require 'rspec/expectations'; rescue LoadError; require 'spec/expectations
     CapybaraDriverRegistrar.register_selenium_driver(:chrome)
     Capybara.run_server = false
     #World(Capybara)
+
+    # Cargar automáticamente todas las clases en la carpeta PAGES
+    Dir[File.join(File.dirname(__FILE__), '../../Pages/**/*.rb')].each do |file|
+      puts "Cargando: #{file}"
+      require file
+    end
