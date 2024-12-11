@@ -1,5 +1,5 @@
 Feature: Navigate GMO Online Catalog
-  As a user
+  As an online GMO shopper
   I want to click the "Enter GMO OnLine" button
   So that I can access the product catalog
 

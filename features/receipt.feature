@@ -1,5 +1,5 @@
 Feature: Receipt Verification
-  As a user
+  As an online GMO shopper
   I want to verify my order receipt
   So I can confirm my purchase details and total amount
 
