@@ -1,5 +1,5 @@
 Feature: Product Detail Navigation
-  As a user
+  As an online GMO shopper
   I want to view detailed product information
   So I can learn more about specific items before purchase
 

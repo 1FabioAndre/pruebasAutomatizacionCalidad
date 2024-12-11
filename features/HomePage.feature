@@ -1,5 +1,5 @@
 Feature: Green Mountain Outpost Navigation
-  As a user
+  As an online GMO shopper
   I want to navigate through the Green Mountain Outpost website
   So I can test its functionality
 

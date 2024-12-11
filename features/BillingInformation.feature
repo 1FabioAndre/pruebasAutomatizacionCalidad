@@ -1,5 +1,5 @@
 Feature: Bill Information Form
-  As a user
+  As an online GMO shopper
   I want to fill out the Bill Information form
   So I can complete the billing and shipping details
 
