@@ -13,7 +13,13 @@ Scenario: Clicking the "Enter GMO OnLine" button redirects to the correct page
   When I click the "Enter GMO OnLine" button
   Then I should be redirected to the "Online Catalog" page
   And I should see an "Online Catalog" heading
-  And I should see the product table with items listed
+  And I should see the Online Catalog product table listing the following products:
+    | 3 Person Dome Tent         |
+    | External Frame Backpack    |
+    | Glacier Sun Glasses        |
+    | Padded Socks               |
+    | Hiking Boots               |
+    | Back Country Shorts        |
 
 Scenario: Clicking the "About the GMO Site" button redirects to the correct page
   When I click the "About The GMO Site" button

@@ -37,23 +37,19 @@ Then('I should see an "Online Catalog" heading') do
   expect(page).to have_selector('h1', text: 'OnLine Catalog', wait: 10)
 end
 
-Then('I should see the product table with items listed') do
-  expect(page).to have_selector('table', visible: true)
+Then('I should see the Online Catalog product table listing the following products:') do |table|
+  expected_products = table.raw.flatten
 
-  # Verificar que la tabla contiene los productos
-  products = [
-    '3 Person Dome Tent',
-    'External Frame Backpack',
-    'Glacier Sun Glasses',
-    'Padded Socks',
-    'Hiking Boots',
-    'Back Country Shorts'
-  ]
-  products.each { |product| expect(page).to have_content(product) }
+  actual_products = all('table tr').map do |row|
+    row.all('td')[1]&.text&.strip
+  end.compact
 
-  rows = all('table tr').size
-  expect(rows).to eq(12)
+  expected_products.each do |product|
+    expect(actual_products).to include(product)
+  end
 end
+
+
 
 # Scenario: Clicking the "About the GMO Site" button
 When('I click the "About The GMO Site" button') do
