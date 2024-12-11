@@ -6,7 +6,7 @@ Given('I navigate to the product catalog') do
     find('body > form > div:nth-child(1) > center > table > tbody > tr > td:nth-child(1) > input[type=button]').click
 end
 
-Given('I add a product to the cart') do
+Given('I add 1 tent to the cart') do
     fill_in 'QTY_TENTS', with: 1
     find('body > form > table > tbody > tr:nth-child(3) > td > div > center > table > tbody > tr > td > p > input[type=submit]:nth-child(2)').click
 end
