@@ -4,10 +4,6 @@ begin require 'rspec/expectations'; rescue LoadError; require 'spec/expectations
     require 'capybara/cucumber'
     require 'capybara-screenshot/cucumber'
     
-    #PTravel Settings
-    ENV['USER']="Pepazo"
-    ENV['PSW']="ILoveQA"
-    
     Capybara.default_driver = :selenium
     
     # Set the host the Capybara tests should be run against
